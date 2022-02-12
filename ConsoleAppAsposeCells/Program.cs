@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Aspose.Cells;
 using System.Drawing;
+using Range = Aspose.Cells.Range;
 
 Action<string> display = Console.WriteLine;
 display("ASPOSE.Cells sample app");
@@ -147,6 +148,7 @@ for (int i = 0; i < 12; i++)
   SetColor(3, i, Color.DeepSkyBlue);
   SetBold(3, i);
 }
+
 worksheet.AutoFitColumns();
 string integerToString = "123";
 string dateToString = "12/02/2022";
@@ -154,6 +156,9 @@ workbook.Worksheets[0].Cells[9, 0].PutValue(Convert.ToInt32(integerToString));
 workbook.Worksheets[0].Cells[9, 1].PutValue(Convert.ToDateTime(dateToString));
 workbook.Worksheets[0].Cells[9, 2].PutValue("12/02/2022");
 workbook.Worksheets[0].Cells[9, 3].PutValue("3.12345");
+
+Range rangeHeader = workbook.Worksheets[0].Cells.CreateRange(0, 10, false);
+Range rangeData = workbook.Worksheets[0].Cells.CreateRange(1, 0, 100, 8);
 
 worksheet.IsSelected = true;
 workbook.Save("test.xlsx");
