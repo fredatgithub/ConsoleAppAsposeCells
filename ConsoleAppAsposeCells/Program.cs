@@ -148,6 +148,12 @@ for (int i = 0; i < 12; i++)
   SetBold(3, i);
 }
 worksheet.AutoFitColumns();
+string integerToString = "123";
+string dateToString = "12/02/2022";
+workbook.Worksheets[0].Cells[9, 0].PutValue(Convert.ToInt32(integerToString));
+workbook.Worksheets[0].Cells[9, 1].PutValue(Convert.ToDateTime(dateToString));
+workbook.Worksheets[0].Cells[9, 2].PutValue("12/02/2022");
+workbook.Worksheets[0].Cells[9, 3].PutValue("3.12345");
 
 worksheet.IsSelected = true;
 workbook.Save("test.xlsx");
