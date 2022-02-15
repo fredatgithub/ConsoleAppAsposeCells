@@ -5,7 +5,7 @@ using Range = Aspose.Cells.Range;
 
 Action<string> display = Console.WriteLine;
 display("ASPOSE.Cells sample app");
-Workbook workbook = new Workbook();
+Workbook workbook = new();
 if (workbook.Worksheets.Count == 0)
 {
   workbook.Worksheets.Add("sheet1");
